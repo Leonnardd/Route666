@@ -9,6 +9,7 @@ public class LeaveEnterCar : MonoBehaviour
 
     public BoxCollider enterTrigger;
     public bool outsideCar;
+    private bool inTrigger;
 
     public Transform InsideCarTransform;
     public Transform OutsideCarSpawner;
@@ -33,15 +34,20 @@ public class LeaveEnterCar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.GetComponent<BoxCollider>() == enterTrigger){
+        if(inTrigger){
             if(Input.GetKeyDown(KeyCode.E)){
                 outsideCar = !outsideCar;
                 CheckLocation();
             }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.GetComponent<BoxCollider>() == enterTrigger){
+            inTrigger = true;
+        }
+        else{
+            inTrigger = false;
         }
     }
     private void CheckLocation(){
