@@ -15,6 +15,8 @@ public class LeaveEnterCar : MonoBehaviour
     public Transform OutsideCarSpawner;
     private CharacterController charControl;
 
+    public GameObject triggerTxt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,21 +37,34 @@ public class LeaveEnterCar : MonoBehaviour
     void Update()
     {
         if(inTrigger){
+            if(outsideCar){
+                triggerTxt.SetActive(true);
+            }
+            else{
+                triggerTxt.SetActive(false);
+            }
             if(Input.GetKeyDown(KeyCode.E)){
                 outsideCar = !outsideCar;
                 CheckLocation();
             }
         }
+        else{
+            triggerTxt.SetActive(false);
+        }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<BoxCollider>() == enterTrigger){
             inTrigger = true;
         }
-        else{
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.GetComponent<BoxCollider>() == enterTrigger){
             inTrigger = false;
         }
     }
+    
     private void CheckLocation(){
         if(outsideCar == false){
             GetComponent<Transform>().SetParent(InsideCarTransform);
