@@ -86,6 +86,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: Percentage
     m_EventTreshold: 91
+<<<<<<< HEAD
+=======
+  - m_ConditionMode: 3
+    m_ConditionEvent: Percentage
+    m_EventTreshold: 89
+>>>>>>> 9fa4202ef4177777175bda28cde3b71b5761e63b
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2953311404906650831}
   m_Solo: 0
