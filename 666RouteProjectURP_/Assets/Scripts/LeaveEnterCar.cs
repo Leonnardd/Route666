@@ -14,22 +14,27 @@ public class LeaveEnterCar : MonoBehaviour
     public Transform InsideCarTransform;
     public Transform OutsideCarSpawner;
     private CharacterController charControl;
+    private PlayerFlashlight playerFlash;
 
     public GameObject triggerTxt;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerFlash = GetComponent<PlayerFlashlight>();
         charControl = GetComponent<CharacterController>();
         if(!outsideCar){
             GetComponent<Transform>().SetParent(InsideCarTransform);
             GetComponent<Transform>().localPosition = new Vector3(0,0,0);
             playerMovement.enabled = false;
             charControl.enabled = false;
+            playerFlash.isFlash = false;
+            playerFlash.canFlash = false;
         }
          else{
             carController.CanDrive = false;
             charControl.enabled = true;
+            playerFlash.canFlash = true;
         }
     }
 
@@ -66,12 +71,15 @@ public class LeaveEnterCar : MonoBehaviour
     }
     
     private void CheckLocation(){
-        if(outsideCar == false){
+        if(!outsideCar){
             GetComponent<Transform>().SetParent(InsideCarTransform);
             GetComponent<Transform>().localPosition = new Vector3(0,0,0);
             carController.CanDrive = true;
             playerMovement.enabled = false;
             charControl.enabled = false;
+            playerFlash.isFlash = false;
+            playerFlash.canFlash = false;
+            
         }
         else{
             carController.CanDrive = false;
@@ -80,6 +88,7 @@ public class LeaveEnterCar : MonoBehaviour
             GetComponent<Transform>().SetParent(null);
             charControl.enabled = true;
             playerMovement.enabled = true;
+            playerFlash.canFlash = true;
         }
     }
 }
