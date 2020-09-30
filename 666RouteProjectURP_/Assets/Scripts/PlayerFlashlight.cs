@@ -20,18 +20,25 @@ public class PlayerFlashlight : MonoBehaviour
 
     // Update is called once per frame
     void Update(){   
-        batAnim.gameObject.SetActive(canFlash);
+        //batAnim.gameObject.SetActive(canFlash);
         if(canFlash){
             if(Input.GetKeyDown(KeyCode.F)){
                 isFlash = !isFlash;
             }
         }
+        else{
+            if(secondsLeft < secondsDurability){
+                secondsLeft+= Time.deltaTime/5;
+            }
+        }
         lightObj.SetActive(isFlash);
         if(isFlash){
-            secondsLeft-= Time.deltaTime;
-            percentage = Mathf.Round((secondsLeft/secondsDurability)*100);
-            print(percentage);
+            if(secondsLeft > 0){
+                secondsLeft-= Time.deltaTime;
+            }
         }
+        percentage = Mathf.Round((secondsLeft/secondsDurability)*100);
+        print(percentage);
         batAnim.SetFloat("Percentage",percentage);
     }
 }
