@@ -43,7 +43,7 @@ public class CarController : MonoBehaviour
         HandleSteering();
         UpdateWheels();
         GetComponent<Rigidbody>().centerOfMass = new Vector3 (0, -0.9f, 0);
-        if(Input.GetKeyDown(KeyCode.F)){
+        if(Input.GetKeyDown(KeyCode.F) && CanDrive){
             isFlash = !isFlash;
             flashes.SetActive(isFlash);
 
