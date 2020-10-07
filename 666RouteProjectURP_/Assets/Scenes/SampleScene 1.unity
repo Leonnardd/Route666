@@ -316,6 +316,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7602795661817749567, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795661817749567, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795661851731392, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795661851731392, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795661999492831, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795661999492831, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7602795662613840081, guid: 1c98fe17784d4b24eaca912865c5bfea,
         type: 3}
       propertyPath: m_Name
@@ -325,6 +355,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795663802633692, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_SidewaysFriction.m_Stiffness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602795663802633692, guid: 1c98fe17784d4b24eaca912865c5bfea,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7602795663847734605, guid: 1c98fe17784d4b24eaca912865c5bfea,
         type: 3}
@@ -349,12 +389,12 @@ PrefabInstance:
     - target: {fileID: 7603445508139441814, guid: 1c98fe17784d4b24eaca912865c5bfea,
         type: 3}
       propertyPath: breakForce
-      value: 1500
+      value: 40000
       objectReference: {fileID: 0}
     - target: {fileID: 7603445508139441814, guid: 1c98fe17784d4b24eaca912865c5bfea,
         type: 3}
       propertyPath: motorForce
-      value: 1000
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 7603445508139441814, guid: 1c98fe17784d4b24eaca912865c5bfea,
         type: 3}

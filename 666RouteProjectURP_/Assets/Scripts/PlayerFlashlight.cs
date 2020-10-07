@@ -36,6 +36,10 @@ public class PlayerFlashlight : MonoBehaviour
             if(secondsLeft > 0){
                 secondsLeft-= Time.deltaTime;
             }
+            else{
+                isFlash = false;
+                lightObj.SetActive(false);
+            }
         }
         percentage = Mathf.Round((secondsLeft/secondsDurability)*100);
         print(percentage);
