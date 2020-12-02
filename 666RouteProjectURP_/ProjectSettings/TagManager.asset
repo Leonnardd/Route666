@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - carTrigger
+  - Selectable
   layers:
   - Default
   - TransparentFX
